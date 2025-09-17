@@ -4,13 +4,13 @@
 const config = {
   title: "Zhuofu Chen",
   tagline: "Personal study and interest blog",
-  url: "https://ZhuofuChen1.github.io",
-  baseUrl: "/chens-page-final/",
+  url: "https://zhuofuchen1.vercel.app", // 改为你的 Vercel 项目地址
+  baseUrl: "/", // 根路径
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
-  // GitHub pages deployment config
+  // GitHub pages 配置可以保留，也不会影响 Vercel
   organizationName: "ZhuofuChen1",
   projectName: "chens-page-final",
   deploymentBranch: "gh-pages",
@@ -91,6 +91,7 @@ const config = {
 };
 
 module.exports = config;
+
 
 
 
