@@ -1,43 +1,60 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import Link from '@docusaurus/Link';
+import avatar from '../assets/zhuofu_avatar.jpg'; // 确保图片路径正确
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title="Chen's Homepage"
+      description="Welcome to my personal study and interest blog">
+      <main className={styles.mainContainer}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <img
+            src={avatar}
+            alt="Zhuofu Chen Avatar"
+            className={styles.avatar}
+          />
+          <h1>👋 Hi, I'm Zhuofu Chen</h1>
+          <p>
+            Currently studying at the <strong>University of Edinburgh</strong>.<br />
+            Welcome to my personal homepage where I share my interests, university course notes, and external reading analysis.
+          </p>
+          <div className={styles.heroButtons}>
+            <Link className={styles.button} to="/docs/University_courses/intro">
+              University Course Notes
+            </Link>
+            <Link className={styles.button} to="/docs/External_reading/intro">
+              External Reading Analysis
+            </Link>
+          </div>
+        </section>
+
+        {/* Interests Section */}
+        <section className={styles.interests}>
+          <h2>My Interests</h2>
+          <ul>
+            <li>Artificial Intelligence / LLMs</li>
+            <li>Programming & Algorithms</li>
+            <li>Photography & Travel</li>
+            <li>Research Papers & Technical Analysis</li>
+          </ul>
+        </section>
+
+        {/* About Me Section */}
+        <section className={styles.aboutMe}>
+          <h2>About Me</h2>
+          <p>
+            I enjoy exploring new technologies, documenting my learning process, and connecting with like-minded people.<br />
+            I hope you find interesting content here and feel free to share your thoughts or reach out!
+          </p>
+        </section>
       </main>
     </Layout>
   );
 }
+
+
+
